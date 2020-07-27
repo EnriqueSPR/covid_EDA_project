@@ -1,0 +1,47 @@
+# Covid_EDA_Project (27_07_2020)
+
+Coronavirus is a family of viruses that can cause illness, which can vary from common cold and cough to sometimes more severe disease. 
+SARS-CoV-2 (n-coronavirus) is the new virus of the coronavirus family, which first discovered in 2019, which has not been identified in humans before. It is a contagious virus which is believed to have started at a fish market in the chinease city of  Wuhan in December 2019. This disease was later declared as Pandemic by WHO due to high rate spreads throughout the world. Currently (on the date 24 July 2020), this leads to a total of 600K+ Deaths across the globe.
+The spread of this virus is currently accelerating globaly; and it is of ultimate importance to better undersand its behaviour.
+
+In this notebook I focus on analyzing covid data in an effort to better understand the main factors that drive the spread of Covid.
+
+# Code and Resources Used
+
+**Python Version**: 3.7
+
+**Packages**: pandas, numpy, matplotlib, seaborn, bokeh and plotly.
+
+Below I include few highlight figures.
+
+Histograms showing the distribution of the different variables in the data set:
+<img src="figures/hist.png" width="600"/> 
+
+Diagram showing the correlations among all the variables in the data set:
+<img src="figures/corr_all.png" width="600"/>
+
+Plots showing the number of cases per million and the number of tests per 1000 reported in each continent daily:
+
+<img src="figures/lines_cases_per_milllion_continents.png" width="300"/>   <img src="new_tests_per_1000_continents.png" width="300"/>
+
+Plots showing the top 10 countries affected in the world by cases and deaths reported so far:
+
+<img src="figures/lines_top10_cases.png" width="300"/>   <img src="figures/lines_top10_deaths.png" width="300"/>
+
+Plots showing the top 5 countries affected in the world by cumulative cases and deaths every 2 weeks:
+
+<img src="figures/cumulative_cases_2W_top5.png" width="300"/>   <img src="figures/cumulative_deaths_2W_top5.png" width="300"/>
+
+
+
+
+**Data sources**: Data was obtained from the [our world in data](https://ourworldindata.org/coronavirus-source-data) and [world o meters](https://www.worldometers.info/coronavirus/) websites.
+
+ ### Conclusions: 
+In this exploratory data analysis of Covid Data we have extracted some valuable information on the factors driving the spread and negative impact of this virus
+* Older people seem to be more susceptible to the virus.
+* Countries with higher testing rates are controlling better the stread of covid. Scaling-up testing quickly at the beginnnig seems to be a critical factor in order to be able to control the pandemia.
+* The GDP per capita, hadwashing facilies and number of beds at hospitals seem to be critical also factors for Covid control. In fact, these variables undoubdtely greatly contribute a stronger health-care system which in turn allowed a quicker and more effective response.
+* The larger percentage of men death rates compared to women remains a matter of discussion. The higher rate of male smokers may make men more susceptible to the disease.
+* The pandemia seems to be accelerating in the american continent, where policies have been somewhat more relaxed. The oposite tendecy is taking place in Europe. This comes to show the importance of following the advices from health authorities from the use of the mask, practicing social distancing and washing hands.
+* Currently, the most affected countries seem to be USA, Colombia, South Africa, India, Mexico, Brazil and Peru as the recovery rates and increases in cases per million in last 2 weeks show.
