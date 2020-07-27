@@ -12,6 +12,8 @@ In this notebook I focus on analyzing covid data in an effort to better understa
 
 **Packages**: pandas, numpy, matplotlib, seaborn, bokeh and plotly.
 
+**Data sources**: Data was obtained from the [our world in data](https://ourworldindata.org/coronavirus-source-data) and [world o meters](https://www.worldometers.info/coronavirus/) websites.
+
 Below I include few highlight figures.
 
 * Histograms showing the distribution of the different variables in the data set:
@@ -41,9 +43,13 @@ Below I include few highlight figures.
 
 <img src="figures/perc_deaths_country.png" width="300"/><img src="figures/population_aged70_country.png" width="300"/><img src="figures/test_rates_country.png" width="300"/> 
 
+* Screenshots of the interactive plots generated with Bokeh and Plotly:
+
+<img src="figures/interactive_plot_GDP_tests.png" width="600"/>
 
 
-**Data sources**: Data was obtained from the [our world in data](https://ourworldindata.org/coronavirus-source-data) and [world o meters](https://www.worldometers.info/coronavirus/) websites.
+<img src="figures/interactive_plot_cases_deaths_px.png" width="600"/>
+
 
  ### Conclusions: 
 In this exploratory data analysis of Covid Data we have extracted some valuable information on the factors driving the spread and negative impact of this virus
