@@ -22,7 +22,7 @@ Diagram showing the correlations among all the variables in the data set:
 
 Plots showing the number of cases per million and the number of tests per 1000 reported in each continent daily:
 
-<img src="figures/lines_cases_per_milllion_continents.png" width="300"/>   <img src="new_tests_per_1000_continents.png" width="300"/>
+<img src="figures/lines_cases_per_milllion_continents.png" width="300"/>   <img src="figures/new_tests_per_1000_continents.png" width="300"/>
 
 Plots showing the top 10 countries affected in the world by cases and deaths reported so far:
 
@@ -32,6 +32,9 @@ Plots showing the top 5 countries affected in the world by cumulative cases and 
 
 <img src="figures/cumulative_cases_2W_top5.png" width="300"/>   <img src="figures/cumulative_deaths_2W_top5.png" width="300"/>
 
+Plots showing the death rates, the percentage of population older than 70 and the testing rates by country:
+
+<img src="figures/perc_deaths_country.png" width="300"/><img src="figures/population_aged70_country.png" width="300"/><img src="figures/test_rates_country.png" width="300"/> 
 
 
 
