@@ -6,7 +6,7 @@ The spread of this virus is currently accelerating globaly; and it is of ultimat
 
 In this notebook I focus on analyzing covid data in an effort to better understand the main factors that drive the spread of Covid.
 
-# Code and Resources Used
+### Code and Resources Used
 
 **Python Version**: 3.7
 
@@ -51,7 +51,7 @@ Below I include few highlight figures.
 <img src="figures/interactive_plot_cases_deaths_px.png" width="600"/>
 
 
- ### Conclusions: 
+### Conclusions: 
 In this exploratory data analysis of Covid Data we have extracted some valuable information on the factors driving the spread and negative impact of this virus
 * Older people seem to be more susceptible to the virus.
 * Countries with higher testing rates are controlling better the stread of covid. Scaling-up testing quickly at the beginnnig seems to be a critical factor in order to be able to control the pandemia.
@@ -59,3 +59,13 @@ In this exploratory data analysis of Covid Data we have extracted some valuable 
 * The larger percentage of men death rates compared to women remains a matter of discussion. The higher rate of male smokers may make men more susceptible to the disease.
 * The pandemia seems to be accelerating in the american continent, where policies have been somewhat more relaxed. The oposite tendecy is taking place in Europe. This comes to show the importance of following the advices from health authorities from the use of the mask, practicing social distancing and washing hands.
 * Currently, the most affected countries seem to be USA, Colombia, South Africa, India, Mexico, Brazil and Peru as the recovery rates and increases in cases per million in last 2 weeks show.
+
+### Forecast: 
+
+The low testing rates of highly populated countries such as India will make very difficult to control this virus, since it has been shown that most of the people (in particular of young age) remain assimptomatic but infectious. Hence, the countries at highest risk in the weeks to come are those:
+
+* High populated.
+* With low median-age.
+* With low testing rates.
+
+Hence, it is expected that the health impact in the coming weeks will be greatest in Colombia, South Africa, India, Brazil, Mexico, Peru and USA.
