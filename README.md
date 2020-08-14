@@ -1,7 +1,6 @@
 # Covid_EDA_Project (27_07_2020)
 
-Coronavirus is a family of viruses that can cause illness, which can vary from common cold and cough to sometimes more severe disease. 
-SARS-CoV-2 (n-coronavirus) is the new virus of the coronavirus family, which first discovered in 2019, which has not been identified in humans before. It is a contagious virus which is believed to have started at a fish market in the chinease city of  Wuhan in December 2019. This disease was later declared as Pandemic by WHO due to high rate spreads throughout the world. Currently (on the date 24 July 2020), this leads to a total of 600K+ Deaths across the globe.
+Coronavirus disease 2019 (COVID‑19) is an infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). It was first identified in December 2019 in Wuhan, Hubei, China, and has resulted in an ongoing pandemic. As of 27 of July 2020, more than 16.6 million cases have been reported across 188 countries and territories, resulting in more than 600K+ deaths.
 The spread of this virus is currently accelerating globaly; and it is of ultimate importance to better undersand its behaviour.
 
 In this notebook I focused on analyzing covid data in an effort to better understand the main factors that drive the spread of Covid.
