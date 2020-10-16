@@ -5,6 +5,8 @@ The spread of this virus is currently accelerating globaly; and it is of ultimat
 
 In this notebook I focused on analyzing covid data in an effort to better understand the main factors that drive the spread of Covid.
 
+[See project here](https://nbviewer.jupyter.org/github/EnriqueSPR/covid_EDA_project/blob/master/covid_EDA_project.ipynb)
+
 ### Code and Resources Used
 
 **Python Version**: 3.7
