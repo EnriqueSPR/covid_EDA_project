@@ -1,4 +1,4 @@
-# Covid_EDA_Project (15_08_2020)
+#   Exploratory Data Analyses of Covid Data (15_08_2020) and creation of an EDA Covid app
 
 Coronavirus disease 2019 (COVID‑19) is an infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). It was first identified in December 2019 in Wuhan, Hubei, China, and has resulted in an ongoing pandemic. As of 15 August 2020, more than 21.1 million cases have been reported across 188 countries and territories, resulting in more than 765,000 deaths. More than 13.2 million people have recovered.
 The spread of this virus is currently accelerating globaly; hence it is importance to better understand its behaviour-spread.
@@ -74,3 +74,33 @@ The low testing rates of highly populated countries such as India will make very
 * With low testing rates.
 
 Hence, it is expected that the health impact in the coming weeks will be greatest in Colombia, South Africa, India, Brazil, Mexico, Peru and USA.
+
+## Covid EDA app:
+
+I built locally an app with the [Streamlit](https://streamlit.io/) package and deployed it using the [Heroku](https://dashboard.heroku.com/apps) framework. 
+
+Click **[here](https://st-covid-eda.herokuapp.com/)** to give it a try.
+
+There are a total of 5 types of plots that can be used in the app to visualize the evolution of the pandemia:
+
+1) Date-Line Plot: A linear graph that shows parameter frequencies along the date
+
+<img src="figures/streamlit_app_1.png" width="450"/>
+
+2) Scatter-Plot: Plot to study the relactionship between parameters.
+
+<img src="figures/streamlit_app_2.png" width="450"/>
+
+3) Bar-Plot: This plot displays the most recent data of a parameter (Y axis) of choice for each country (X_axis).
+
+<img src="figures/streamlit_app_3.png" width="450"/>
+
+4) Map-Plot: This plot displays the evolution overtime of a parameter (Y axis) on a map plot of the selected countries.
+
+<img src="figures/streamlit_app_4.png" width="450"/>
+
+5) Bubble-Plot: This is a nice plot to observe the evolution of the pandemia. It plots the total_cases_per_million (X axis) vs the total_deaths_per_million overtime for each country.
+
+<img src="figures/streamlit_app_5.png" width="450"/>
+
+
