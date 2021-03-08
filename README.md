@@ -39,7 +39,8 @@ There are a total of **5 types of plots** that can be used in the app to visuali
 
 <img src="figures/streamlit_app_4.png" width="450"/>
 
-**5) Bubble-Plot**: This is a nice plot to observe the evolution of the pandemia. It plots the total_cases_per_million (X axis) vs the total_deaths_per_million overtime for each country.
+**5) Bubble-Plots**: This is a nice plot to observe the evolution of the pandemia. It plots the total_cases_per_million (X axis) vs the total_deaths_per_million overtime for each country.
+<img src="figures/streamlit_app_6.png" width="450"/>
 
 <img src="figures/streamlit_app_5.png" width="450"/>
 
