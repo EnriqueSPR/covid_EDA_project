@@ -161,6 +161,11 @@ def date_line_plot():
     col2.plotly_chart(fig, use_container_width=True)
     col3.markdown("""
        &nbsp;
+        ` `  
+        ` `  
+        ` `  
+        ` `  
+        ` `  
        #### Table with the data used for the line plot:
         """)
     col3.table(df_param.head(3))
@@ -176,7 +181,7 @@ col2.markdown("""---""")
 # PLOT 2: Scatterplot of two parameters
 
 
-dict_param = {"total_cases": "max", "new_cases": "median", "new_cases_smoothed": "median", "total_deaths": "max", "new_deaths":"median", "new_deaths_smoothed":"median",
+dict_param = {"total_cases": "max", "new_cases": "median", "new_cases_smoothed": "median", "total_deaths": "max", "total_deaths_per_million":"max", "new_deaths":"median", "new_deaths_smoothed":"median",
                         "total_cases_per_million": "max", "new_cases_per_million": "median", "new_cases_smoothed_per_million": "median",
                         "new_deaths_smoothed_per_million":"median", "reproduction_rate": "median", 
                         "icu_patients": "median", "icu_patients_per_million": "median", "hosp_patients": "median", "hosp_patients_per_million": "median",
@@ -230,6 +235,14 @@ def scatter_plot():
         ` `  
         ` `  
         ` `  
+        ` `  
+        ` `  
+        ` `  
+        ` `  
+        ` `  
+        ` `  
+        ` `  
+        ` `  
         #### Table with the data used for the scatter plot:
         """)
         col3.table(df_piv.head(3))
@@ -254,6 +267,12 @@ def scatter_plot_size():
 
         col2.plotly_chart(fig, use_container_width=True)
         col3.markdown("""
+        ` `  
+        ` `  
+        ` `  
+        ` `  
+        ` `  
+        ` `  
         ` `  
         ` `  
         ` `  
@@ -306,7 +325,7 @@ if col2.button('Show Scatter Plot'):
 
 col2.info("Plot to study the relactionship between parameters. Choose a parameter for the X and Y axis and the list of countries to be included in the scatter plot.")
 
-size = col2.checkbox("Note, If you want to include a size option fot the scatter plot click here.")
+size = col2.checkbox("Note: Click here if you want to include a size option fot the scatter plot.")
 if size:
     size_param = col2.selectbox('Please, select the parameter you want to use for the size:', parameters_list)
     df_pivot = impute_with_median(df_pivot)
