@@ -25,24 +25,25 @@ There are a total of **5 types of plots** that can be used in the app to visuali
 
 **1) Date-Line Plot**: A linear graph that shows parameter frequencies along the date
 
-<img src="figures/streamlit_app_1.png" width="450"/>
+<img src="figures/streamlit_app_1.png" width="800"/>
 
 **2) Scatter-Plot**: Plot to study the relactionship between parameters.
 
-<img src="figures/streamlit_app_2.png" width="450"/>
+<img src="figures/streamlit_app_2.png" width="800"/>
 
 **3) Bar-Plot**: This plot displays the most recent data of a parameter (Y axis) of choice for each country (X_axis).
 
-<img src="figures/streamlit_app_3.png" width="450"/>
+<img src="figures/streamlit_app_3.png" width="800"/>
 
 **4) Map-Plot**: This plot displays the evolution overtime of a parameter (Y axis) on a map plot of the selected countries.
 
-<img src="figures/streamlit_app_4.png" width="450"/>
+<img src="figures/streamlit_app_4.png" width="800"/>
 
 **5) Bubble-Plots**: This is a nice plot to observe the evolution of the pandemia. It plots the total_cases_per_million (X axis) vs the total_deaths_per_million overtime for each country.
-<img src="figures/streamlit_app_6.png" width="450"/>
 
-<img src="figures/streamlit_app_5.png" width="450"/>
+<img src="figures/streamlit_app_6.png" width="800"/>
+
+<img src="figures/streamlit_app_5.png" width="800"/>
 
 ---
 
