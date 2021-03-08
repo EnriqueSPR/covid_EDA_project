@@ -5,8 +5,6 @@ The spread of this virus is currently accelerating globaly; hence it is importan
 
 In this notebook I focused on analyzing covid data in an effort to better understand the main factors that drive the spread of Covid.
 
-[**See project here**](https://nbviewer.jupyter.org/github/EnriqueSPR/covid_EDA_project/blob/master/covid_EDA_project.ipynb)
-
 ### Code and Resources Used
 
 **Python Version**: 3.7
@@ -47,7 +45,9 @@ There are a total of **5 types of plots** that can be used in the app to visuali
 
 ---
 
-## Exploratory Data Analyses ():
+## Exploratory Data Analyses (Aug-2020):
+
+[**See project here**](https://nbviewer.jupyter.org/github/EnriqueSPR/covid_EDA_project/blob/master/covid_EDA_project.ipynb)
 
 Below I include few highlight figures.
 
