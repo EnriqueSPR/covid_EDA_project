@@ -166,6 +166,9 @@ def date_line_plot():
         ` `  
         ` `  
         ` `  
+        ` `  
+        ` `  
+        ` `  
        #### Table with the data used for the line plot:
         """)
     col3.table(df_param.head(3))
