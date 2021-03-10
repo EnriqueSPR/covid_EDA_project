@@ -48,26 +48,26 @@ expander_bar.markdown("""
 #LayoutPLOTS
 col2, col3 = st.beta_columns((2,1))
 
-# Load data at side bar
+# Load and prepare df
 
 @st.cache(allow_output_mutation=True)
 def load_df():
     covid_url = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
     df = pd.read_csv(covid_url, parse_dates=True)
+    df["perc_death_cases"] = (df["total_deaths"]/df["total_cases"])*100 # Adding an extra param
+    df["perc_death_cases"] = df["perc_death_cases"].apply(lambda x: round(x,1))
+    df["date"] = pd.to_datetime(df["date"], format="%Y-%m-%d")
+    df.loc[df["location"]=="Northern Cyprus", "continent"] = "Europe" # dealing with some nan continent info missing...
+    df.loc[df["location"]=="International", "continent"] = "World"
+    df.loc[df["continent"].isnull(),"continent"] = df["location"]
+    df.loc[df["continent"]=="European Union", "continent"] = "Europe"
+    df = df.reindex(sorted(df.columns), axis=1) # reordering columns alphabetically
     return df
 
-# Load and prepare df
 data_load_state = col2.info('Parsing most recent data...')
 df = load_df()
 data_load_state.success('Parsing most recent data... done!')
-df["perc_death_cases"] = (df["total_deaths"]/df["total_cases"])*100 # Adding an extra param
-df["perc_death_cases"] = df["perc_death_cases"].apply(lambda x: round(x,1))
-df["date"] = pd.to_datetime(df["date"], format="%Y-%m-%d")
-df.loc[df["location"]=="Northern Cyprus", "continent"] = "Europe" # dealing with some nan continent info missing...
-df.loc[df["location"]=="International", "continent"] = "World"
-df.loc[df["continent"].isnull(),"continent"] = df["location"]
-df.loc[df["continent"]=="European Union", "continent"] = "Europe"
-df = df.reindex(sorted(df.columns), axis=1) # reordering columns alphabetically
+
 
 # Download File if u wish
 
