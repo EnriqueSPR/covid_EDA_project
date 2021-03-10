@@ -41,7 +41,7 @@ expander_bar = st.beta_expander("About", expanded=True)
 expander_bar.markdown("""
 * **Python libraries used:** pandas, streamlit, collections, numpy, base64, PIL, datetime, sklearn and plotly.
 * **Data**: [wordometers](https://www.worldometers.info/coronavirus/) and [our-world-in-data](https://covid.ourworldindata.org/data/owid-covid-data.csv).
-* **Author**: [Enrique Alcalde](https://enriquespr.github.io/Enrique_portfolio_web/) 🙋🏽‍♂️.
+* **Author**: Enrique Alcalde. [Find out more about this project](https://enriquespr.github.io/Enrique_portfolio_web/post/project_6/) 🙋🏽‍♂️.
 ---
 """)
 
@@ -337,22 +337,22 @@ col2.markdown("""---""")
 # PLOT 3: Bar Plot for a custom parameter (most recent data)
 
 
-df_pivot_bar = pd.pivot_table(data=df, index=["continent", "location", "date"], 
+def bar_plot():
+    try:
+        df_pivot_bar = pd.pivot_table(data=df, index=["continent", "location", "date"], 
               values=list_cols_pivot,
               aggfunc = dict_param).reset_index()
 
-df_pivot_bar = df_pivot_bar.reindex(sorted(df_pivot_bar.columns), axis=1) # reordering columns alphabetically
+        df_pivot_bar = df_pivot_bar.reindex(sorted(df_pivot_bar.columns), axis=1) # reordering columns alphabetically
 
-dict_param.update(date = "max")
-dict_param = dict(OrderedDict(sorted(dict_param.items()))) # order alph
-list_cols_pivot = list(sorted(dict_param.keys()))
-# shape (69363, 55)
+        dict_param.update(date = "max")
+        dict_param = dict(OrderedDict(sorted(dict_param.items()))) # order alph
+        list_cols_pivot = list(sorted(dict_param.keys()))
+        # shape (69363, 55)
 
-# next i will get the earliest data shape (193, 55)
-df_pivot_bar = df_pivot_bar.loc[(df_pivot_bar["date"] == (df_pivot_bar["date"].max()))].reset_index(drop=True)
+        # next i will get the earliest data shape (193, 55)
+        df_pivot_bar = df_pivot_bar.loc[(df_pivot_bar["date"] == (df_pivot_bar["date"].max()))].reset_index(drop=True)
 
-def bar_plot():
-    try:
         df_pivot_bar.sort_values(by=parameter_y, inplace=True)
         df_plot = df_pivot_bar.loc[df_pivot_bar["location"].isin(countries)].fillna(0)
         fig = px.bar(df_plot, x=df_plot["location"].unique(), y=parameter_y,
@@ -403,7 +403,7 @@ col2.info("This plot displays the most recent data of a parameter (Y axis) of ch
 
 
 def bar_plot_incidence():
-    #try:
+    try:
         inci = []
         for j in countries:
             df_c = df.loc[(df["location"]==j)]
@@ -469,8 +469,8 @@ def bar_plot_incidence():
         col3.table(df_incidencia.head(3))
         col3.markdown(filedownloader(df_incidencia), unsafe_allow_html=True)
 
-    #except Exception as e:
-        #col2.warning("This parameter combination was not valid or a selected country is not present in the pivot table (no data) ⚠.")
+    except Exception as e:
+        col2.warning("This parameter combination was not valid or a selected country is not present in the pivot table (no data) ⚠.")
 
 incidence = col2.checkbox("Note, one of the most widely used epidemiological parameter is the indicence rate\
 (new detected cases in a perdiod of time per 100.000 inhabitants). Click here to calculate the incidence rate for the desired countries \
@@ -485,12 +485,14 @@ col2.markdown("""---""")
 
 
 # 4 Map Plot
-df_map = df.loc[~(df["location"].isin(["World", "International"]))].reset_index(drop=True)
-df_map.sort_values(by=["date","location"], inplace=True)
-df_map["date"] = df_map["date"].astype("str")
+
 
 def map_plot():
     try:
+        df_map = df.loc[~(df["location"].isin(["World", "International"]))].reset_index(drop=True)
+        df_map.sort_values(by=["date","location"], inplace=True)
+        df_map["date"] = df_map["date"].astype("str")
+
         df_plot_map = df_map.loc[df_map["location"].isin(countries)]
         fig = px.choropleth(data_frame = df_plot_map,
                         locations= "iso_code",
@@ -559,21 +561,23 @@ col2.markdown("""---""")
 
 # 5  Bubble Plot
 
-df_bubble = df[["continent", "location","date","total_cases","total_deaths","total_cases_per_million", "total_deaths_per_million", "life_expectancy", "perc_death_cases", "total_vaccinations_per_hundred"]]
-df_bubble.loc[df_bubble["continent"].isnull(),"continent"] = df_bubble["location"]
-populated_countries_list = list(df.loc[df["population"]>4000000, "location"].unique())
-df_bubble = df_bubble.loc[df_bubble["location"].isin(populated_countries_list)].reset_index(drop=True)
-df_bubble['total_vaccinations_per_hundred'].fillna((df_bubble['total_vaccinations_per_hundred'].mean()), inplace=True)
-df_bubble = impute_with_median(df_bubble)
-df_bubble["date"] = pd.to_datetime(df_bubble["date"], format="%Y-%m-%d")
-df_bubble.sort_values(by=["continent","date"], inplace=True) # IMPORTANT TO SORT CONTINENT ALSO
-df_bubble = df_bubble.loc[~(df_bubble["date"] <= "2020-02-05")].reset_index(drop=True) # ealier dates not sorted. 😐?
-df_bubble["date"] = df_bubble["date"].astype("str")
-xmin, xmax = 1, max(df_bubble["total_cases_per_million"])
-ymin, ymax = 1, max(df_bubble["total_deaths_per_million"])
+
 
 def bubble_plot():
     try:
+        df_bubble = df[["continent", "location","date","total_cases","total_deaths","total_cases_per_million", "total_deaths_per_million", "life_expectancy", "perc_death_cases", "total_vaccinations_per_hundred"]]
+        df_bubble.loc[df_bubble["continent"].isnull(),"continent"] = df_bubble["location"]
+        populated_countries_list = list(df.loc[df["population"]>4000000, "location"].unique())
+        df_bubble = df_bubble.loc[df_bubble["location"].isin(populated_countries_list)].reset_index(drop=True)
+        df_bubble['total_vaccinations_per_hundred'].fillna((df_bubble['total_vaccinations_per_hundred'].mean()), inplace=True)
+        df_bubble = impute_with_median(df_bubble)
+        df_bubble["date"] = pd.to_datetime(df_bubble["date"], format="%Y-%m-%d")
+        df_bubble.sort_values(by=["continent","date"], inplace=True) # IMPORTANT TO SORT CONTINENT ALSO
+        df_bubble = df_bubble.loc[~(df_bubble["date"] <= "2020-02-05")].reset_index(drop=True) # ealier dates not sorted. 😐?
+        df_bubble["date"] = df_bubble["date"].astype("str")
+        xmin, xmax = 1, max(df_bubble["total_cases_per_million"])
+        ymin, ymax = 1, max(df_bubble["total_deaths_per_million"])
+
         fig = px.scatter(df_bubble, x="total_cases_per_million", y="total_deaths_per_million", animation_frame="date", animation_group="location",
         color="continent", hover_name="location", width=800, height=600, size = "total_vaccinations_per_hundred", size_max=50,
         range_x=[xmin,xmax], range_y=[ymin,ymax], template= "plotly_dark")
