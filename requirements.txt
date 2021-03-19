@@ -3,6 +3,6 @@ numpy==1.18.5
 streamlit==0.77.0
 scikit-learn==0.24.1
 base58==2.1.0
-pillow==7.1.2 
+pillow==8.1.1
 plotly==4.14.3
 
