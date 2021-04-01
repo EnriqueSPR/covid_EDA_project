@@ -656,12 +656,25 @@ col2.markdown("""---""")
 
 def bubble_plot_continent():
     try:
+        df_bubble = df[["continent", "location","date","total_cases","total_deaths","total_cases_per_million", "total_deaths_per_million", "life_expectancy", "perc_death_cases", "total_vaccinations_per_hundred"]]
+        df_bubble.loc[df_bubble["continent"].isnull(),"continent"] = df_bubble["location"]
+        populated_countries_list = list(df.loc[df["population"]>4000000, "location"].unique())
+        df_bubble = df_bubble.loc[df_bubble["location"].isin(populated_countries_list)].reset_index(drop=True)
+        df_bubble['total_vaccinations_per_hundred'].fillna((df_bubble['total_vaccinations_per_hundred'].mean()), inplace=True)
+        df_bubble = impute_with_median(df_bubble)
+        df_bubble["date"] = pd.to_datetime(df_bubble["date"], format="%Y-%m-%d")
+        df_bubble.sort_values(by=["continent","date"], inplace=True) # IMPORTANT TO SORT CONTINENT ALSO
+        df_bubble = df_bubble.loc[~(df_bubble["date"] <= "2020-02-05")].reset_index(drop=True) # ealier dates not sorted. 😐?
+        df_bubble["date"] = df_bubble["date"].astype("str")
+        xmin, xmax = 1, max(df_bubble["total_cases_per_million"])
+        ymin, ymax = 1, max(df_bubble["total_deaths_per_million"])
+
         fig = px.scatter(df_bubble, x="total_cases_per_million", y="total_deaths_per_million", animation_frame="date", animation_group="location",
         color="continent", hover_name="location", width=1400, height=400, size = "total_vaccinations_per_hundred", size_max=50, facet_col="continent",
         range_x=[xmin,xmax], range_y=[ymin,ymax], template= "plotly_dark")
 
         fig.update_traces(marker=dict(size=10,
-                                          line=dict(width=2, color='white')), selector=dict(mode='markers'))
+                                            line=dict(width=2, color='white')), selector=dict(mode='markers'))
 
         st.plotly_chart(fig, use_container_width=True)
  
