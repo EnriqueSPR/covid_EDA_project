@@ -43,7 +43,7 @@ There are a total of **5 types of plots** that can be used in the app to visuali
 
 <img src="figures/streamlit_app_6.png" width="800"/>
 
-<img src="figures/streamlit_app_5.png" width="800"/>
+<img src="figures/bubble_plot.png" width="800"/>
 
 ---
 
