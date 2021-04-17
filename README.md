@@ -17,9 +17,9 @@ In this notebook I focused on analyzing covid data in an effort to better unders
 
 ## Covid EDA app:
 
-I built locally an app with the [Streamlit](https://streamlit.io/) package and deployed it using the [Heroku](https://dashboard.heroku.com/apps) framework. 
+I built and deployed an app with the [Streamlit](https://streamlit.io/) package. 
 
-Click **[here](https://st-covid-eda.herokuapp.com/)** to give it a try.
+Click **[here](https://share.streamlit.io/enriquespr/covid_eda_project/st_covid_EDA_app.py)** to give it a try.
 
 There are a total of **5 types of plots** that can be used in the app to visualize the evolution of the pandemia:
 
