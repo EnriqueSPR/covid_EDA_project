@@ -2,6 +2,8 @@
 
 Coronavirus disease 2019 (COVID‑19) is an infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). It was first identified in December 2019 in Wuhan, Hubei, China, and has resulted in an ongoing pandemic. The World Health Organization declared a Public Health Emergency of International Concern regarding COVID-19 on 30 January 2020, and later declared a pandemic on 11 March 2020. As of 24 April 2021, more than 145 million cases have been confirmed, with more than 3.08 million deaths attributed to COVID-19, making it one of the deadliest pandemics in history ([Wikipedia](https://en.wikipedia.org/wiki/COVID-19_pandemic)).
 
+<img src="figures/COVID-19_Outbreak.png" width="600"/>
+
 In this notebook I focused on analyzing covid data in an effort to better understand the main factors that drive the spread of Covid.
 
 ### Code and Resources Used
